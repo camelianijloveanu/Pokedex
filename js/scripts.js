@@ -25,3 +25,5 @@ let pokemonList = [
 		types: ['fairy','normal']
 	}
 ];
+
+document.write(pokemonList.map(poke=>poke.types))
