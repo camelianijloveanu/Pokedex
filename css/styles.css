@@ -31,3 +31,53 @@ hr.line {
   border-radius: 7px;
   background-color: #c23b22;
 }
+
+@media all and (max-width: 500px) {
+  header {
+    max-width: 100%;
+  }
+  body {
+    max-width: 100%;
+  }
+  hr {
+    max-width: 100%;
+  }
+  .title {
+    max-width: 100%;
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  body {
+    max-width: 100%;
+    font-size: 15px;
+  }
+  hr {
+    max-width: 100%;
+  }
+  header {
+    max-width: 100%;
+  }
+  .title {
+    max-width: 100%;
+    font-size: 20px;
+  }
+
+}
+@media all and (max-width: 750px) {
+ 
+  body {
+    max-width: 100%;
+  }
+  header {
+    max-width: 100%;
+  }
+  hr {
+    max-width: 100%;
+  }
+
+  .title {
+    max-width: 100%;
+    font-size: 20px;
+  }
+}
