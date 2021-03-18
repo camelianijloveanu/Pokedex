@@ -19,3 +19,15 @@ header {
   font-weight: bold;
   line-height: 40px;
 }
+.title {
+  color: #c23b22;
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+hr.line {
+  height: 3px;
+  border: 2px;
+  border-radius: 7px;
+  background-color: #c23b22;
+}
