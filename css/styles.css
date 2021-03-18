@@ -19,6 +19,7 @@ header {
   font-weight: bold;
   line-height: 40px;
 }
+
 .title {
   color: #c23b22;
   font-weight: bold;
@@ -31,6 +32,8 @@ hr.line {
   border-radius: 7px;
   background-color: #c23b22;
 }
+
+
 
 @media all and (max-width: 500px) {
   header {
