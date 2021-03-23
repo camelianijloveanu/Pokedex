@@ -19,3 +19,15 @@ let pokemonList = [
       }
     };
 })();
+
+pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
+  console.log(pokemonRepository.getAll()); 
+
+pokemonRepository.getAll().forEach(function (pokemon){
+    if (pokemon.height > 1) {
+        document.write(pokemon.name + ' (height : ' + pokemon.height + ')' + ' - Wow, that\‘s big!');
+    } else {
+        document.write(pokemon.name +  ' (height : ' + pokemon.height + ')');
+    }
+        document.write('<br>', '<br>');
+    });
