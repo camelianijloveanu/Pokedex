@@ -1,41 +1,53 @@
+// IIFE pokemonRepository
+let pokemonRepository = (function () {
+	// array of objects
 let pokemonList = [
-	{
-		name: "Charmander", 
-		height: "0.6", 
-		types: ['fire']
-	},
-	{
-		name: "Bulbasaur", 
-		height: "0.7", 
-		types: ['grass','poison']
-	},
-	{
-		name: "Butterfree", 
-		height: "1.1", 
-		types: ['bug','flying']
-	},
-	{
-		name: "Pikachu", 
-		height: "0.4", 
-		types: ['electric']
-	},
-	{
-		name: "Jigglypuff", 
-		height: "0.5", 
-		types: ['fairy','normal']
-	}
-];
+  { name: "Charmande", height: "0.6", types: ['fire']},
+  { name: "Bulbasaur", height: "0.7", types: ['grass','poison']},
+  { name: "Butterfree", height: "1.1", types: ['bug','flying']},
+  { name: "Pikachu", height: "0.4", types: ['electric'] },
+  { name: "Jigglypuff", height: "0.5", types: ['fairy','normal']
+  }];
 
-for (let i=0; i < pokemonList.length; i++){
-  if (pokemonList[i].height <1.2 && pokemonList[i].height >1){
-  	console.log(pokemonList[i].name + " is a big Pokemon");
-    document.write("<p>" + pokemonList[i].name + ' ' + " ( height:" + pokemonList[i].height  +  " )" + " - \"Wow!\", that's a big Pokemon!"  + "</p>");
-  }else if (pokemonList[i].height <0.5){
-  	console.log(pokemonList[i].name + " is an average Pokemon");
-    document.write("<p>" + pokemonList[i].name + ' ' + " ( height:" +  pokemonList[i].height + " )" + "</p>");
-  }else {
-  	console.log(pokemonList[i].name + " is a small Pokemon");
-    document.write("<p>" + pokemonList[i].name + ' ' + " ( height:" +  pokemonList[i].height + " )" + "</p>");
-  }
+   return {
+      add: function(pokemon) {
+      	if (typeof pokemon === 'object'){
+        pokemonList.push(pokemon);
+    }
+      },
+      getAll: function() {
+        return pokemonList;
+      }
+    };
+})();
+ 
+pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
+  console.log(pokemonRepository.getAll()); 
+
+pokemonRepository.getAll().forEach(function (pokemon){
+    if (pokemon.height > 1) {
+        document.write(pokemon.name + ' (height : ' + pokemon.height + ')' + ' - Wow, that\‘s big!');
+    } else {
+        document.write(pokemon.name +  ' (height : ' + pokemon.height + ')');
+    }
+        document.write('<br>', '<br>');
+    });
+
+
+
+
+
+let pokemons = ["Charmande", "Bulbasaur", "Butterfree", "Pikachu", "Jigglypuff", "Meowth"]
+/**
+ * Filter array items based on search criteria 
+ */
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
 }
 
+console.log(filterItems(pokemons, 'ch'))  // ['Pikachu', 'Charmande']
+console.log(filterItems(pokemons, 'bu'))  // ['Butterfree', 'Bulbasaur']
+console.log(filterItems(pokemons, 'ji'))  // ['Jigglypuff']
+console.log(filterItems(pokemons, 'me'))  // ['Meowth']
