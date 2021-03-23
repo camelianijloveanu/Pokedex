@@ -1,52 +1,19 @@
-let pokemonRepository = (function () {
-  let pokemonList = [	
-  	{
-		name: "Charmander", 
-		height: '0.6', 
-		types: ['fire']
-	},
-	{
-		name: "Bulbasaur", 
-		height: '0.7', 
-		types: ['grass','poison']
-	},
-	{
-		name: "Butterfree", 
-		height: '1.1', 
-		types: ['bug','flying']
-	},
-	{
-		name: "Pikachu", 
-		height: '0.4', 
-		types: ['electric']
-	},
-	{
-		name: "Jigglypuff", 
-		height: '0.5', 
-		types: ['fairy','normal']
-	}];
-
-   function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
-
-  function getAll() {
-    return pokemonList;
-  }
-
-  return {
-    add: add,
-    getAll: getAll
-  };
-
-})();
+let pokemonList = [
+  { name: "Charmande", height: "0.6", types: ['fire']},
+  { name: "Bulbasaur", height: "0.7", types: ['grass','poison']},
+  { name: "Butterfree", height: "1.1", types: ['bug','flying']},
+  { name: "Pikachu", height: "0.4", types: ['electric'] },
+  { name: "Jigglypuff", height: "0.5", types: ['fairy','normal']
+  }];
 
 
-document.write(pokemonRepository.getAll());
-pokemonRepository.add({ name: "Pikachu" });
-document.write(pokemonRepository.add());
-
-function myLoopFunction(getAll) {
-  document.write("<p>" + pokemonList.name + ' ' + " (height:" +  pokemonList.height + ")" + "</p>");
+function myLoopFunction(pokemon) {
+	if (pokemon.height >1){
+  	console.log(pokemon.name + " is a big Pokemon");
+    document.write("<p>" + pokemon.name + ' ' + " ( height:" + pokemon.height  +  " )" + " - \"Wow!\", that's a big Pokemon!"  + "</p>");
+	}    
+	else {  
+  	document.write("<p>" + pokemon.name + ' ' + " ( height:" +  pokemon.height + " )" + "</p>");
+  	}
 }
-getAll.forEach(myLoopFunction);
+pokemonList.forEach(myLoopFunction);
