@@ -1,3 +1,4 @@
+// IIFE pokemonRepository
 let pokemonRepository = (function () {
 	// array of objects
 let pokemonList = [
@@ -10,11 +11,12 @@ let pokemonList = [
 
    return {
       add: function(pokemon) {
+      	// only allows adding objects //
       	if (typeof pokemon === 'object'){
         pokemonList.push(pokemon);
     }
       },
-      getAll: function() {
+      getAll: function() { //allows accesing the array from outside //
         return pokemonList;
       }
     };
