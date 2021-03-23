@@ -1,3 +1,5 @@
+let pokemonRepository = (function () {
+	// array of objects
 let pokemonList = [
   { name: "Charmande", height: "0.6", types: ['fire']},
   { name: "Bulbasaur", height: "0.7", types: ['grass','poison']},
@@ -6,14 +8,14 @@ let pokemonList = [
   { name: "Jigglypuff", height: "0.5", types: ['fairy','normal']
   }];
 
-
-function myLoopFunction(pokemon) {
-	if (pokemon.height >1){
-  	console.log(pokemon.name + " is a big Pokemon");
-    document.write("<p>" + pokemon.name + ' ' + " ( height:" + pokemon.height  +  " )" + " - \"Wow!\", that's a big Pokemon!"  + "</p>");
-	}    
-	else {  
-  	document.write("<p>" + pokemon.name + ' ' + " ( height:" +  pokemon.height + " )" + "</p>");
-  	}
-}
-pokemonList.forEach(myLoopFunction);
+   return {
+      add: function(pokemon) {
+      	if (typeof pokemon === 'object'){
+        pokemonList.push(pokemon);
+    }
+      },
+      getAll: function() {
+        return pokemonList;
+      }
+    };
+})();
