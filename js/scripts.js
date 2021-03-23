@@ -31,3 +31,18 @@ pokemonRepository.getAll().forEach(function (pokemon){
     }
         document.write('<br>', '<br>');
     });
+
+let pokemons = ["Charmande", "Bulbasaur", "Butterfree", "Pikachu", "Jigglypuff", "Meowth"]
+/**
+ * Filter array items based on search criteria 
+ */
+function filterItems(arr, query) {
+  return arr.filter(function(el) {
+      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+  })
+}
+
+console.log(filterItems(pokemons, 'ch'))  // ['Pikachu', 'Charmande']
+console.log(filterItems(pokemons, 'bu'))  // ['Butterfree', 'Bulbasaur']
+console.log(filterItems(pokemons, 'ji'))  // ['Jigglypuff']
+console.log(filterItems(pokemons, 'me'))  // ['Meowth']
