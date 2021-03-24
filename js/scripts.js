@@ -32,6 +32,13 @@ let pokemonList = [
       function showDetails(pokemon){ //displays pokemon name in the console when button is clicked
       console.log(button.innerText);
     };
+
+
+    return {
+      add: add,
+      getAll: getAll,
+      addListItem: addListItem
+    }
 })();
  
 pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
