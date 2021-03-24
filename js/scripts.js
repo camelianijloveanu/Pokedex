@@ -1,6 +1,6 @@
 // IIFE pokemonRepository
-let pokemonRepository = (function () {
-	// array of objects
+let pokemonRepository = (function (){
+  // array of objects
 let pokemonList = [
   { name: "Charmande", height: "0.6", types: ['fire']},
   { name: "Bulbasaur", height: "0.7", types: ['grass','poison']},
@@ -9,17 +9,19 @@ let pokemonList = [
   { name: "Jigglypuff", height: "0.5", types: ['fairy','normal']
   }];
 
-   function add(pokemon) { //allows to add only objects with the add function
+    // allows to add only objects with the add function
+    function add(pokemon) { 
         if (typeof pokemon === 'object'){
         pokemonList.push(pokemon);
       }
-      }
+    }
 
-    function getAll() { //allows access to the pokemonList from outside the IIFE
+      // allows access to the pokemonList from outside the IIFE
+    function getAll() { 
         return pokemonList;
       }
-      
-    function addListItem(pokemon) { //displays list as ul and something happens when you press each button
+      // displays list as ul and something happens when you press each button
+    function addListItem(pokemon) { 
       let pokemonList = document.querySelector(".pokemon-list");
       let listPokemon = document.createElement('li');
       let button = document.createElement('button');
@@ -29,17 +31,21 @@ let pokemonList = [
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
-      function showDetails(pokemon){ //displays pokemon name in the console when button is clicked
+  
+      // displays pokemon name in the console when button is clicked
+    function showDetails(pokemon){ 
       console.log(button.innerText);
-    };
+      };  
+    
 
-
+     
     return {
       add: add,
       getAll: getAll,
       addListItem: addListItem
-    }
+    };
 })();
+
  
 pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
   console.log(pokemonRepository.getAll()); 
