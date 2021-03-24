@@ -26,7 +26,13 @@ pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
 
 pokemonRepository.getAll().forEach(function (pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
-
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  
   });
 
 
