@@ -25,13 +25,9 @@ pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
   console.log(pokemonRepository.getAll()); 
 
 pokemonRepository.getAll().forEach(function (pokemon){
-    if (pokemon.height > 1) {
-        document.write(pokemon.name + ' (height : ' + pokemon.height + ')' + ' - Wow, that\‘s big!');
-    } else {
-        document.write(pokemon.name +  ' (height : ' + pokemon.height + ')');
-    }
-        document.write('<br>', '<br>');
-    });
+    let pokemonList = document.querySelector(".pokemon-list");
+
+  });
 
 
 
@@ -51,3 +47,4 @@ console.log(filterItems(pokemons, 'ch'))  // ['Pikachu', 'Charmande']
 console.log(filterItems(pokemons, 'bu'))  // ['Butterfree', 'Bulbasaur']
 console.log(filterItems(pokemons, 'ji'))  // ['Jigglypuff']
 console.log(filterItems(pokemons, 'me'))  // ['Meowth']
+
