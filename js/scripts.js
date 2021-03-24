@@ -35,8 +35,8 @@ pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
   console.log(pokemonRepository.getAll()); 
 
 pokemonRepository.getAll().forEach(function (pokemon){
-
-  
+  pokemonRepository.addListItem(pokemon);
+   
   });
 
 
