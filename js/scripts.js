@@ -9,16 +9,17 @@ let pokemonList = [
   { name: "Jigglypuff", height: "0.5", types: ['fairy','normal']
   }];
 
-   return {
-      add: function(pokemon) {
-      	if (typeof pokemon === 'object'){
+   function add(pokemon) {
+        if (typeof pokemon === 'object'){
         pokemonList.push(pokemon);
-    }
-      },
-      getAll: function() {
+      }
+      }
+
+    function getAll() {
         return pokemonList;
       }
-    };
+      
+    function addListItem(pokemon) 
 })();
  
 pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
