@@ -9,17 +9,17 @@ let pokemonList = [
   { name: "Jigglypuff", height: "0.5", types: ['fairy','normal']
   }];
 
-   function add(pokemon) {
+   function add(pokemon) { //allows to add only objects with the add function
         if (typeof pokemon === 'object'){
         pokemonList.push(pokemon);
       }
       }
 
-    function getAll() {
+    function getAll() { //allows access to the pokemonList from outside the IIFE
         return pokemonList;
       }
       
-    function addListItem(pokemon) {
+    function addListItem(pokemon) { //displays list as ul and something happens when you press each button
       let pokemonList = document.querySelector(".pokemon-list");
       let listPokemon = document.createElement('li');
       let button = document.createElement('button');
@@ -29,7 +29,7 @@ let pokemonList = [
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
-      function showDetails(pokemon){
+      function showDetails(pokemon){ //displays pokemon name in the console when button is clicked
       console.log(button.innerText);
     };
 })();
@@ -41,9 +41,6 @@ pokemonRepository.getAll().forEach(function (pokemon){
   pokemonRepository.addListItem(pokemon);
 
   });
-
-
-
 
 
 let pokemons = ["Charmande", "Bulbasaur", "Butterfree", "Pikachu", "Jigglypuff", "Meowth"]
