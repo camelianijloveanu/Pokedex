@@ -29,6 +29,9 @@ let pokemonList = [
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
+      function showDetails(pokemon){
+      console.log(button.innerText);
+    };
 })();
  
 pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
@@ -36,7 +39,7 @@ pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
 
 pokemonRepository.getAll().forEach(function (pokemon){
   pokemonRepository.addListItem(pokemon);
-   
+
   });
 
 
