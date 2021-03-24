@@ -30,12 +30,13 @@ let pokemonList = [
       button.classList.add("button-class");
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
-    }
+    
   
       // displays pokemon name in the console when button is clicked
     function showDetails(pokemon){ 
       console.log(button.innerText);
       };  
+    }
     
 
      
