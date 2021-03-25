@@ -26,17 +26,19 @@ let pokemonList = [
       let listPokemon = document.createElement('li');
       let button = document.createElement('button');
       button.innerText = pokemon.name;
-      button.addEventListener("click", showDetails);
+      button.addEventListener("click", function () {
+        showDetails(pokemon); }
       button.classList.add("button-class");
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
+    }
     
   
       // displays pokemon name in the console when button is clicked
     function showDetails(pokemon){ 
       console.log(button.innerText);
       };  
-    }
+    
     
 
      
