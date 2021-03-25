@@ -84,10 +84,12 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
   console.log(pokemonRepository.getAll()); 
 
-pokemonRepository.getAll().forEach(function (pokemon){
-  pokemonRepository.addListItem(pokemon);
-
+pokemonRepository.loadList().then(function () {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
   });
+});
+
 
 
 let pokemons = ["Charmande", "Bulbasaur", "Butterfree", "Pikachu", "Jigglypuff", "Meowth"]
