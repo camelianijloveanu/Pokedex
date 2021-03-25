@@ -66,9 +66,11 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   
       // displays pokemon name in the console when button is clicked
-    function showDetails(pokemon){ 
-      console.log(button.innerText);
-      };  
+    function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+      console.log(item);
+    });
+  } 
     
     
 
