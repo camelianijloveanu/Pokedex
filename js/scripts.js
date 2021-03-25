@@ -36,7 +36,7 @@ let pokemonList = [
   
       // displays pokemon name in the console when button is clicked
     function showDetails(pokemon){ 
-      console.log(button.innerText);
+      console.log(pokemon.name);
       };  
     
     
