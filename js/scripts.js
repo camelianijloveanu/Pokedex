@@ -33,19 +33,19 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
-    
+        
     function loadList() {
       return fetch(apiUrl).then(function (response) {
         return response.json();
-    }).then(function (json) {
-      json.results.forEach(function (item) {
-        let pokemon = {
-          name: item.name,
-          detailsUrl: item.url
-        };
+      }).then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url
+          };
         add(pokemon);
-      });
-     }).catch(function (e) {
+        });
+      }).catch(function (e) {
         console.error (e);
       })
     }
