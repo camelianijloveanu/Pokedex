@@ -6,8 +6,14 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     // allows to add only objects with the add function
     function add(pokemon) { 
-        if (typeof pokemon === 'object'){
+        if (
+        typeof pokemon === 'object' &&
+        'name' in pokemon &&
+        'detailsUrl' in pokemon
+        ){
         pokemonList.push(pokemon);
+      }else {
+        console.log("pokemon not found")
       }
     }
 
