@@ -82,9 +82,6 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     };
 })();
 
- 
-pokemonRepository.add({ name: "Meowth", height: 0.4, types:['normal'] });
-  console.log(pokemonRepository.getAll()); 
 
 pokemonRepository.loadList().then(function () {
   pokemonRepository.getAll().forEach(function (pokemon) {
