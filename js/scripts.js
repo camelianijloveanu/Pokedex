@@ -50,6 +50,20 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       })
     }
 
+    function loadDetails(item) {
+      let url = item.detailsUrl;
+      return fetch(url).then(function (response) {
+        return response.json();
+    }).then(function (details) {
+      // Now we add the details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+
   
       // displays pokemon name in the console when button is clicked
     function showDetails(pokemon){ 
