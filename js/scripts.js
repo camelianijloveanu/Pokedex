@@ -2,6 +2,7 @@
 let pokemonRepository = (function (){
   // array of objects
 let pokemonList = [];
+let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     // allows to add only objects with the add function
     function add(pokemon) { 
