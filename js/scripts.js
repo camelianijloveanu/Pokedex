@@ -33,7 +33,7 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
-        
+    // retrieves the list of pokemons from the api
     function loadList() {
         showLoadingMessage();
       return fetch(apiUrl).then(function (response) {
@@ -54,6 +54,7 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       hideLoadingMessage();
     }
 
+    // loads the details of each pokemon using fetch
     function loadDetails(item) {
       showLoadingMessage();
       let url = item.detailsUrl;
