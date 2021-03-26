@@ -35,6 +35,7 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     }
         
     function loadList() {
+        showLoadingMessage();
       return fetch(apiUrl).then(function (response) {
         return response.json();
       }).then(function (json) {
@@ -45,12 +46,16 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
           };
         add(pokemon);
         });
-      }).catch(function (e) {
+      }).then(function(){
+        hideLoadingMessage();
+      })  .catch(function (e) {
         console.error (e);
       })
+      hideLoadingMessage();
     }
 
     function loadDetails(item) {
+      showLoadingMessage();
       let url = item.detailsUrl;
       return fetch(url).then(function (response) {
         return response.json();
@@ -59,9 +64,12 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+    }).then(function (){
+      hideLoadingMessage();
     }).catch(function (e) {
       console.error(e);
     });
+    hideLoadingMessage();
   }
 
   
@@ -71,8 +79,17 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       console.log(item);
     });
   } 
-    
-    
+    // shows loading img
+    function showLoadingMessage() {
+    loadImage = document.querySelector(".loadingImage");
+    loadImage.classList.add("show");
+  }
+
+  // hides loading img
+    function hideLoadingMessage() {
+    loadImage = document.querySelector(".loadingImage");
+    loadImage.classList.remove("show");
+  }
 
      
     return {
@@ -81,7 +98,9 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
       addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
-      showDetails: showDetails
+      showDetails: showDetails,
+      showLoadingMessage: showLoadingMessage,
+      hideLoadingMessage: hideLoadingMessage
     };
 })();
 
