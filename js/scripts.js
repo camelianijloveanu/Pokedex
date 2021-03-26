@@ -106,11 +106,19 @@ let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 
 pokemonRepository.loadList().then(function () {
-  pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
-  });
+  // displays loading img in browser
+  pokemonRepository.showLoadingMessage();
+  // timer to stimulate data loading time
+  setTimeout(function() {
+    // data is loaded
+    pokemonRepository.getAll().forEach(function (pokemon) {
+      // data is  displayed
+      pokemonRepository.addListItem(pokemon);
+  })
+    // loading img hidden 
+    pokemonRepository.hideLoadingMessage();
+  }, 1000)
 });
-
 
 
 let pokemons = ["Charmande", "Bulbasaur", "Butterfree", "Pikachu", "Jigglypuff", "Meowth"]
