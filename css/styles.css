@@ -63,6 +63,14 @@ hr.line {
   margin-top: 5%;
 }
 
+ul{
+    list-style-type: none;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    columns: 3;
+    list-style-position: inside;
+}
+
 
 @media all and (max-width: 500px) {
   header {
