@@ -86,6 +86,23 @@ ul{
     max-width: 100%;
     font-size: 20px;
   }
+  .button-class {
+    max-width: 100%;
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+  }
+  .show{
+  max-width: 100%;
+  margin: 5%;
+  display: block;
+  padding-right: 5%;
+  }
+  ul {
+    align-content: center;
+    margin-left: 0;
+    padding: 0;
+  }
 }
 @media all and (min-width: 500px) and (max-width: 750px){
   body {
