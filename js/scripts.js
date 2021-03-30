@@ -102,7 +102,9 @@ let modalContainer = document.querySelector('#modal-container');
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
+    // hides the modal when button is clicked
     closeButtonElement.addEventListener('click', hideModal);
+    // creates elements to display pokemon details in the modal
     let modalTitle = document.createElement('h1');
     modalTitle.innerText = pokemon.name;
     let modalContent = document.createElement('p');
