@@ -135,6 +135,17 @@ ul{
   width: 50%;
  } 
 
+#filter{
+  align-self: center;
+  float: center;
+  display: block;
+  padding: auto;
+  text-align: center;
+  color: #c23b22;
+  margin-bottom: 8px;
+}
+
+
 @media all and (max-width: 500px) {
   header {
     max-width: 100%;
