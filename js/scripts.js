@@ -171,5 +171,19 @@ pokemonRepository.loadList().then(function () {
 });
 
 
-
-
+searchPokemonList = document.querySelector(".pokemon-list")
+ //defines search bar
+let searchBar = document.forms["filter"].querySelector("input");
+//adds event listener so it interacs with the user
+searchBar.addEventListener("keyup", function(e){
+  let term = e.target.value.toLowerCase();
+  let searchPokemons = searchPokemonList.getElementsByTagName("li");
+  Array.from(searchPokemons).forEach(function(searchPokemons){
+        let poke = searchPokemons.firstElementChild.textContent;
+        if ( poke.toLowerCase().indexOf(term) != -1){
+          searchPokemons.style.display = "block";
+        } else{
+          searchPokemons.style.display = "none";
+        }
+  })
+})
