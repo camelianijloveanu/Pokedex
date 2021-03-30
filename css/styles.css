@@ -177,6 +177,10 @@ ul{
     margin-left: 0;
     padding: 0;
   }
+  #filter {
+    max-width: 100%;
+    font-size: 15px;
+  }
 }
 @media all and (min-width: 500px) and (max-width: 750px){
   body {
