@@ -149,7 +149,8 @@ let modalContainer = document.querySelector('#modal-container');
       loadDetails: loadDetails,
       showDetails: showDetails,
       showLoadingMessage: showLoadingMessage,
-      hideLoadingMessage: hideLoadingMessage
+      hideLoadingMessage: hideLoadingMessage,
+      hideModal: hideModal
     };
 })();
 
