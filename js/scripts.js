@@ -65,7 +65,7 @@ let modalContainer = document.querySelector('#modal-container');
       // Now we add the details to the item
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.type = details.types[0].type.name;
     }).then(function (){
       hideLoadingMessage();
     }).catch(function (e) {
@@ -76,9 +76,9 @@ let modalContainer = document.querySelector('#modal-container');
 
   
       // displays pokemon details in the console when button is clicked
-    function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
-      console.log(item);
+    function showDetails(pokemon) {
+    loadDetails(item).then(function () {
+      showModal(pokemon);
     });
   } 
     // shows loading img
@@ -171,18 +171,5 @@ pokemonRepository.loadList().then(function () {
 });
 
 
-let pokemons = ["Charmande", "Bulbasaur", "Butterfree", "Pikachu", "Jigglypuff", "Meowth"]
-/**
- * Filter array items based on search criteria 
- */
-function filterItems(arr, query) {
-  return arr.filter(function(el) {
-      return el.toLowerCase().indexOf(query.toLowerCase()) !== -1
-  })
-}
 
-console.log(filterItems(pokemons, 'ch'))  // ['Pikachu', 'Charmande']
-console.log(filterItems(pokemons, 'bu'))  // ['Butterfree', 'Bulbasaur']
-console.log(filterItems(pokemons, 'ji'))  // ['Jigglypuff']
-console.log(filterItems(pokemons, 'me'))  // ['Meowth']
 
