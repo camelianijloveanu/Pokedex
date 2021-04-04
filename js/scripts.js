@@ -63,12 +63,14 @@ let modalContainer = document.querySelector('#modal-container');
       button.addEventListener("click", function () {
         showDetails(pokemon); });
       button.classList.add("button-class");
+      button.classList.add("btn", "btn-danger");
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
         showModal(pokemon);
+        $('#modal-container').modal("show");
       });
     }
 
