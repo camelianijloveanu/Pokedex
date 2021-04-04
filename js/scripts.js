@@ -77,13 +77,13 @@ let modalContainer = document.querySelector('#modal-container');
      // shows loading img
     function showLoadingMessage() {
     loadImage = document.querySelector(".loadingImage");
-    loadImage.classList.add("show");
+    loadImage.classList.add("showImg");
   }
 
   // hides loading img
     function hideLoadingMessage() {
     loadImage = document.querySelector(".loadingImage");
-    loadImage.classList.remove("show");
+    loadImage.classList.remove("showImg");
   }
 
     function showModal(pokemon) {
