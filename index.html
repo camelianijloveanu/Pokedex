@@ -17,6 +17,17 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       </form>
     </nav>
+    <section class="addNewPokemon">
+      <form class="addPokemon form-inline" action="index.html" method="post">
+          <input id="newPokemon" class="form-control mr-sm-2" type="text" placeholder="Add new Pokemon" name="#" value=""> <br>
+          <div class="newPokemonSub">
+          <button type="button" id="subButton" onclick="addPokemon()" class="btn btn-danger btn-sm">Add</button>
+          </div>
+      </form>
+      <div>
+        <p id="result"></p>
+      </div>
+    </section>
     </header>
     <div id="loading">
       <img class="loadingImage" src="img/loading.jpg">
