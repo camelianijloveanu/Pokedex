@@ -87,33 +87,22 @@ let modalContainer = document.querySelector('#modal-container');
   }
 
     function showModal(pokemon) {
-  // Clear all existing modal content
-  modalContainer.innerHTML = '';
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
-  // Add the new modal content
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'X';
-  // hides the modal when button is clicked
-  closeButtonElement.addEventListener('click', hideModal);
-  // creates elements to display pokemon details in the modal
-  let modalTitle = document.createElement('h1');
-  modalTitle.innerText = pokemon.name;
-  let modalContent = document.createElement('p');
-  modalContent.innerText = 'Height: ' + pokemon.height + 'm';
-  let pokemonType = document.createElement('p');
-  pokemonType.innerText = pokemon.type;
-  let pokemonImg = document.createElement('img');
-  pokemonImg.src = pokemon.imageUrl;
-  
-  modal.appendChild(closeButtonElement);
-  modal.appendChild(modalTitle);
-  modal.appendChild(modalContent);
-  modal.appendChild(pokemonImg);
-  modal.appendChild(pokemonType);
-  modalContainer.appendChild(modal);
-  modalContainer.classList.add('is-visible');
+
+let modalTitle = document.getElementById("modalTitle");
+modalTitle.innerText = pokemon.name;
+
+let pokemonHeight = document.getElementById("exampleModalCenterText1");
+pokemonHeight.innerText = "Height: " + pokemon.height;
+pokemonHeight.classList.add("modal-body");
+
+let pokemonType = document.getElementById("exampleModalCenterText2");
+pokemonType.innerText = "Type: " + pokemon.type;
+pokemonType.classList.add("modal-body");
+
+let modalImage = document.getElementById("exampleModalCenterText3");
+modalImage.src = pokemon.imageUrl;
+modalImage.classList.add("pokemonImage");
+
 }
 
 
