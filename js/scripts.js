@@ -169,3 +169,33 @@ searchBar.addEventListener("keyup", function(e){
         }
   })
 })
+
+function addPokemon(pokemon){
+  //get data from input
+  let newPokemon = document.getElementById("newPokemon").value
+
+  if (!newPokemon){
+    return alert("Please write something");
+  };
+
+  // identify pokemon list
+  let pokemonList = document.querySelector(".pokemon-list");
+  // list container
+  let listPokemon = document.createElement('li');
+  // new button
+  let button = document.createElement('button');
+  button.innerText = newPokemon;
+
+  button.addEventListener("click", function(event) {
+    pokemonDetailsNew();
+  })
+  button.classList.add("button-class")
+  button.classList.add("btn", "btn-primary");
+  listPokemon.appendChild(button);
+  pokemonList.insertBefore(listPokemon, pokemonList.firstChild);
+
+  function pokemonDetailsNew(){
+    pokemonName = newPokemon
+    console.log(pokemonName);
+  }
+}
