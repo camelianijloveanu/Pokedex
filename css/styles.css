@@ -54,6 +54,10 @@ header {
 .addPokemon{
   padding-top: 7%;
 }
+section {
+  display: block;
+  padding-left: 21%;
+}
 
 .pokemon-list {
   padding-left: 10%;
@@ -70,4 +74,54 @@ header {
   display: inline-flex;
 }
 
+@media all and (max-width: 500px) {
+  header {
+    max-width: 100%;
+    float: none;
+    display: block;
+    text-align: left;
+  }
 
+  section {
+    padding-top: 20%;
+  }
+
+  #subButton {
+    padding-left: 10%;
+  }
+
+  .form-control {
+    max-width: 100%;
+    width: 70%;
+    height: 25%;
+    float: none;
+  }
+
+  body {
+    max-width: 100%;
+  }
+  #loading {
+    width: 5%;
+    padding-right: 90%;
+    margin-right: 90%;
+  }
+  .loadingImage {
+    width: 250px;
+    margin-top: 250px;
+    margin-left: 75px;
+    align-self: center;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+    .form-control {
+    max-width: 100%;
+    width: 70%;
+    height: 25%;
+    float: none;
+  }
+    section {
+    padding-top: 20%;
+  }
+
+}  
