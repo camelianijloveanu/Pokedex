@@ -16,18 +16,6 @@
       <form class="form-inline" id="filter">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       </form>
-
-    <section class="addNewPokemon">
-      <form class="addPokemon form-inline" action="index.html" method="post">
-          <input id="newPokemon" class="form-control mr-sm-2" type="text" placeholder="Add new Pokemon" name="#" value=""> <br>
-          <div class="newPokemonSub">
-          <button type="button" id="subButton" onclick="addPokemon()" class="btn btn-danger btn-sm">Add</button>
-          </div>
-      </form>
-      <div>
-        <p id="result"></p>
-      </div>
-    </section>   
     </nav>
     </header>
     <div id="loading">
@@ -54,6 +42,17 @@
         </div>
       </div>
     </div>
+    <section class="addNewPokemon">
+      <form class="addPokemon form-inline" action="index.html" method="post">
+          <input id="newPokemon" class="form-control mr-sm-2" type="text" placeholder="Add new Pokemon" name="#" value=""> <br>
+          <div class="newPokemonSub">
+          <button type="button" id="subButton" onclick="addPokemon()" class="btn btn-danger btn-sm">Add</button>
+          </div>
+      </form>
+      <div>
+        <p id="result"></p>
+      </div>
+    </section>   
     <div class="container">
       <ul class="pokemon-list list-group"></ul>
     </div>
