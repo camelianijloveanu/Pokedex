@@ -57,6 +57,7 @@ header {
 
 .pokemon-list {
   padding-left: 10%;
+  list-style-type: none;
 }
 
 .modal-body {
