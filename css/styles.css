@@ -51,16 +51,22 @@ header {
   margin-top: 5%;
 }
 
-.pokemon-list{
-    list-style-type: none;
-    -webkit-columns: 3;
-    -moz-columns: 3;
-    columns: 3;
-    list-style-position: inside;
-}
-
 .addPokemon{
   padding-top: 7%;
+}
+
+.pokemon-list {
+  padding-left: 10%;
+}
+
+.modal-body {
+  display: block;
+  margin: auto;
+}
+
+.navbar {
+  height: 5%;
+  display: inline-flex;
 }
 
 
