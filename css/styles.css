@@ -96,6 +96,13 @@ section {
     height: 25%;
     float: none;
   }
+    #newPokemon {
+    margin-right: 2%;
+  }
+
+  .addNewPokemon {
+    margin-right: 10%;
+  }
 
   body {
     max-width: 100%;
