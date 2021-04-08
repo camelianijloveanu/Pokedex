@@ -168,8 +168,9 @@ searchBar.addEventListener('keyup', function(e){
           searchPokemons.style.display = 'none';
         }
   })
+  addPokemon();
 })
-addPokemon();
+
 function addPokemon(){
   //get data from input
   let newPokemon = document.getElementById('newPokemon').value
