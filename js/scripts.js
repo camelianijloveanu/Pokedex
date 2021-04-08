@@ -64,13 +64,14 @@ let loadImage = document.querySelector('.loadingImage');
         showDetails(pokemon); });
       button.classList.add('button-class');
       button.classList.add('btn', 'btn-danger');
+      button.setAttribute('data-toggle', 'modal');
+      button.setAttribute('data-target', '#modal-container');
       listPokemon.appendChild(button);
       pokemonList.appendChild(listPokemon);
     }
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
         showModal(pokemon);
-        document.querySelector('#modal-container').modal('show');
       });
     }
 
