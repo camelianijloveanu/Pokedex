@@ -5,6 +5,7 @@ let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 let modalContainer = document.querySelector('#modal-container');
 let loadImage = document.querySelector('.loadingImage');
+let button = document.createElement('button');
     // allows to add only objects with the add function
     function add(pokemon) {
         if (
@@ -58,7 +59,6 @@ let loadImage = document.querySelector('.loadingImage');
     function addListItem(pokemon) {
       let pokemonList = document.querySelector('.pokemon-list');
       let listPokemon = document.createElement('li');
-      let button = document.createElement('button');
       button.innerText = pokemon.name;
       button.addEventListener('click', function () {
         showDetails(pokemon); });
@@ -181,8 +181,6 @@ function addPokemon(){
   let pokemonList = document.querySelector('.pokemon-list');
   // list container
   let listPokemon = document.createElement('li');
-  // new button
-  let button = document.createElement('button');
   button.innerText = newPokemon;
 
   button.addEventListener('click', function() {
