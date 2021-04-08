@@ -4,6 +4,7 @@ let pokemonRepository = (function (){
 let pokemonList = [];
 let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 let modalContainer = document.querySelector('#modal-container');
+let loadImage = document.querySelector('.loadingImage');
     // allows to add only objects with the add function
     function add(pokemon) {
         if (
@@ -39,7 +40,6 @@ let modalContainer = document.querySelector('#modal-container');
       })  .catch(function (e) {
         console.error (e);
       })
-      hideLoadingMessage();
     }
     // loads the details of each pokemon using fetch
     function loadDetails(item) {
@@ -70,21 +70,17 @@ let modalContainer = document.querySelector('#modal-container');
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
         showModal(pokemon);
-        $('#modal-container').modal('show');
+        document.querySelector('#modal-container').modal('show');
       });
     }
 
      // shows loading img
     function showLoadingMessage() {
-    let loadImage = document.querySelector('.loadingImage');
-    loadImage = document.querySelector('.loadingImage');
     loadImage.classList.add('showImg');
   }
 
   // hides loading img
     function hideLoadingMessage() {
-    let loadImage = document.querySelector('.loadingImage');
-    loadImage = document.querySelector('.loadingImage');
     loadImage.classList.remove('showImg');
   }
 
@@ -172,7 +168,7 @@ searchBar.addEventListener('keyup', function(e){
         }
   })
 })
-
+addPokemon();
 function addPokemon(){
   //get data from input
   let newPokemon = document.getElementById('newPokemon').value
